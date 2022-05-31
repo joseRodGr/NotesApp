@@ -1,0 +1,91 @@
+header{
+    background-color: var(--primary-color);
+    height: 70px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 200;
+}
+
+nav{
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    line-height: 70px;
+    padding: 0 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+nav .menuBars{
+    border: none;
+    background: none;
+    color: var(--reverse-color);
+    display: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.nav-link{
+    text-decoration: none;
+    color: var(--reverse-color);
+    font-size: 1.2rem; 
+}
+
+.menu .nav-link{
+    transition: all .3s linear;
+    padding: .5rem 1rem;
+    border-radius: 2rem;
+}
+
+nav .menu{
+    display: flex;
+    list-style: none;
+}
+
+.menu .navitem{
+    margin: 0 10px;
+}
+
+.menu .nav-link:hover{
+    background: var(--reverse-color);
+    color: var(--primary-color);
+}
+
+.activate{
+    background: var(--reverse-color);
+    color: var(--primary-color);
+}
+
+nav .menu.showMenu{
+    opacity: 1;
+    pointer-events: all;
+}
+
+
+@media(max-width: 768px){
+   
+    nav .menuBars{
+        display: block;
+    }
+
+    nav .menu{
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        top: 70px;
+        background: var(--primary-dark);
+        width: 100%;
+        text-align: center;
+        opacity: 0;
+        pointer-events: none;
+        transition: all .5s ease;
+        
+    }
+    
+    .menu .navitem{
+        margin: 0 10px;
+    }
+}

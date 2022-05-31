@@ -1,0 +1,9 @@
+.delete-container .delete-info h2{
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+
+.delete-container .delete-info{
+    margin-bottom: 1rem;
+}

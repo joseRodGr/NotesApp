@@ -1,0 +1,17 @@
+<div class="category" *ngIf="category" [ngStyle]="{'background-color': category.color}">
+    <h2 class="title">{{category.name}}</h2>
+    <p class="description">{{category.description}}</p>
+    <div class="info">
+        <div class="icons">
+                <button (click)="openEditCategoryDialog()" matTooltip="edit" [matTooltipPosition]="'below'">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                </button>
+                <button (click)="openDeleteCategoryDialog()" matTooltip="delete">
+                    <i class="fa-solid fa-trash-can"></i>
+                </button>
+        </div>
+       <button routerLink="/note-categories/{{category.categoryId}}" class="btn">
+            See notes
+       </button>
+    </div>
+</div>

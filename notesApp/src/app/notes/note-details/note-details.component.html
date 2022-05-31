@@ -1,0 +1,43 @@
+<div class="container">
+
+    <div class="title-options">
+        <div class="note-options">
+            <button routerLink="/note-categories/{{noteCategory.categoryId}}"><i class="fa-solid fa-arrow-rotate-left"></i><span>Go back</span></button>
+            <button (click)="openDeleteNoteDialog()"><i class="fa-solid fa-trash-can"></i><span>Delete</span></button>
+            <button [matMenuTriggerFor]="beforeMenu"><i class="fa-solid fa-arrows-up-down-left-right"></i><span>Move to</span></button>
+            <mat-menu #beforeMenu="matMenu" xPosition="before">
+                <button (click)="moveNote(cat)" mat-menu-item *ngFor="let cat of categories">{{cat.name}}</button>
+            </mat-menu>
+        </div>
+    </div>
+
+    <div class="form-container" *ngIf="note">
+        <form [formGroup]="noteForm" [ngStyle]="{'background-color': note.categoryColor}" (ngSubmit)="submitForm()">
+            <div class="button-container">
+                <button type="button" class="btn-options" (click)="switchOptions()"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+            </div>
+            <div class="options" [ngClass]="showOptions ? 'showOptions' : ''">
+                <div class="option-buttons">
+                    <button type="button" (click)="openDeleteNoteDialog()" title="delete"><i class="fa-solid fa-trash-can"></i><span>delete</span></button>
+                    <button type="button" title="move to" [matMenuTriggerFor]="beforeMenu"><i class="fa-solid fa-arrows-up-down-left-right"></i><span>move</span></button>
+                    <mat-menu #beforeMenu="matMenu" xPosition="before">
+                        <button type="button" (click)="moveNote(cat)" mat-menu-item *ngFor="let cat of categories">{{cat.name}}</button>
+                    </mat-menu>
+                </div>
+            </div>
+            <mat-form-field class="form-control">
+                <input matInput formControlName="title" placeholder="Title" class="box">
+                <mat-error *ngIf="title?.errors?.required && title?.touched">
+                    <span>title is required</span>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="form-control">
+                <textarea matInput formControlName="body" placeholder="body" class="area"></textarea>
+                <mat-error *ngIf="body?.errors?.required && body?.touched">
+                    <span>body is required</span>
+                </mat-error>
+            </mat-form-field>
+            <button type="submit" [ngClass]="(!noteForm.dirty ? 'invisible' : '')" mat-raised-button class="btn-save">Save</button>
+        </form>
+    </div>
+</div>

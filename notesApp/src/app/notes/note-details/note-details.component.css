@@ -1,0 +1,142 @@
+.title-options{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-options .note-options{
+    margin-bottom: 1rem;
+}
+
+.note-options button{
+    border: none;
+    padding: .3rem .5rem;
+    border-radius: .3rem;
+    margin: .3rem;
+    cursor: pointer;
+    font-size: 1rem;
+    background: none;
+    color: var(--primary-dark);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .25);
+
+}
+
+.note-options button:hover
+{
+    background: var(--primary-color);
+    color: var(--reverse-color);
+}
+
+.note-options button i{
+    margin-right: .5rem;
+}
+
+
+.form-container{
+    max-width: 32rem;
+    margin: 0 auto;
+
+}
+
+.options button{
+    width: max-content;
+    border: none;
+    background: none;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.form-container form{
+    display: flex;
+    flex-direction: column;
+    padding: 4rem 2rem;
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;  
+}
+
+form .options{
+    position: absolute;
+    right: -100%; top: 40%;
+    transition: right .3s; 
+    z-index: 50;
+}
+
+form .options.showOptions{
+    right: 0;
+}
+
+form .options .option-buttons{
+    background: var(--primary-color);
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem 0 0 1rem;
+    padding: .5rem .8rem;
+}
+
+
+.options .option-buttons button:hover{
+    color: var(--reverse-color);
+}
+
+.option-buttons button i{
+    margin-right: .5rem;
+}
+
+form .form-control{
+    margin-bottom: .5rem;
+}
+
+form .area{
+    height: 5rem;
+}
+
+form .box{
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+form .button-container{
+    position: absolute;
+    top: 0;right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form .btn-options{
+    background: inherit;
+    border: none;
+    cursor: pointer;
+    padding: 1.5rem 2rem;
+    z-index: 100;
+    opacity: .5;
+}
+
+form .btn-options:hover{
+    opacity: 1;
+}
+
+form .btn-options i{
+    font-size: 1.2rem;
+    
+}
+
+form .btn-save{
+    font-size: 1rem;
+    background: var(--primary-color);
+    color: var(--reverse-color);
+    transition: opacity .2s linear;
+    opacity: .9;
+}
+
+form .btn-save.invisible{
+    display: none;
+}
+
+form .btn-save:hover{
+    opacity: 1;
+}
+
+

@@ -1,0 +1,108 @@
+.note{
+    background: #F6FFA4;
+    padding: .5rem 1rem;
+    height: 175px;
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+    /* cursor: pointer; */
+}
+
+.note .note-options{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.note button.check-box{
+    position: absolute;
+    top: .2rem; left: .2rem;
+    font-size: 1.2rem;
+    height: 1rem;
+    width: 1rem;
+    border-radius: .1rem;
+    border: 1px solid #1113;
+    background: var(--reverse-color);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--shadow);
+    opacity: 0;
+    pointer-events: none;
+    transition: all .2s;
+}
+
+.note:hover button.check-box,
+.note button.check-box.selected
+{
+    opacity: 1;
+    pointer-events: all;
+}
+
+.note button.check-box i{
+    color: var(--primary-dark);
+    font-size: .9rem;
+    opacity: .2;
+}
+
+.note button.check-box i.selected{
+    opacity: 1;
+}
+
+.note .points{
+    position: absolute;
+    top: 0; right: 1%;
+    padding: 1rem 1rem .5rem 1rem;
+    border: none;
+    background: inherit;
+    cursor: pointer;
+}
+
+
+.note .points i{
+    font-size: 1.2rem;
+    opacity: .5;
+}
+
+.note .points:hover i{
+    opacity: 1;
+}
+
+
+.note-options .icons{
+    position: absolute;
+    top: 26.5%; 
+    right: -100%;
+    padding: .5rem .8rem;
+    background: var(--primary-color);
+    transition: all .3s;
+    border-radius: 1rem 0 0 1rem;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+}
+
+
+.note-options .icons.showOptions{
+    right: 0;
+}
+
+.icons button{
+    width: max-content;
+    border: none;
+    background: none;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.icons button:hover{
+    color: var(--reverse-color);
+}
+
+.icons button i{
+    margin-right: .5rem;
+}
+
+
+

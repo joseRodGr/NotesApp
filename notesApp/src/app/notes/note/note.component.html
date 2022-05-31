@@ -1,0 +1,19 @@
+<div class="note" [ngStyle]="{'background-color': note.categoryColor}" routerLink="/{{note.categoryName}}/note/{{note.noteId}}">
+    <h2>{{utilities.limitLetters(note.title,10)}}</h2>
+    <p>{{utilities.shorten(note.noteBody,8)}}</p>
+    <button class="check-box" [ngClass]="(isSelected ? 'selected' : '')" (click)="$event.stopPropagation()" (click)="toggleSelected()">
+        <i class="fa-solid fa-check" [ngClass]="(isSelected ? 'selected' : '')"></i>
+    </button>
+    {{isSelected}}
+    <button class="points" (click)="$event.stopPropagation()" (click)="switchOptions()"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+    <div class="note-options">
+        <div class="icons" (click)="$event.stopPropagation()" [ngClass]="(showOptions ? 'showOptions' : '')">
+            <button routerLink="/{{note.categoryName}}/note/{{note.noteId}}"><i class="fa-solid fa-pen-to-square"></i><span>edit</span></button>
+            <button (click)="openDeleteNoteDialog()"><i class="fa-solid fa-trash-can"></i><span>delete</span></button>
+            <button [matMenuTriggerFor]="beforeMenu"><i class="fa-solid fa-arrows-up-down-left-right"></i><span>move</span></button>  
+            <mat-menu #beforeMenu="matMenu" xPosition="before">
+                <button (click)="moveNote(cat)" mat-menu-item *ngFor="let cat of categories">{{cat.name}}</button>
+            </mat-menu>
+        </div>
+    </div>
+</div>

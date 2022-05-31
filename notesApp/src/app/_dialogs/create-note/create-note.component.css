@@ -1,0 +1,22 @@
+.create-container h2{
+  color: var(--primary-color);
+}
+
+
+  @media(max-width: 768px){
+    .create-container{
+        width: 300px;
+    }
+}
+
+@media(max-width: 450px){
+  .create-container{
+      width: 250px;
+  }
+}
+
+@media(max-width: 380px){
+  .create-container{
+      width: 200px;
+  }
+}

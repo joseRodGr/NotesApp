@@ -1,0 +1,73 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+
+:root{
+    --primary-color: #8A9EDD;
+    --primary-dark: #718DE1;
+    --reverse-color: #fff;
+    --shadow: 5px 10px 10px rgba(0,0,0,0.25);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+.btn{
+    padding: .5rem 1rem;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    background: var(--reverse-color);
+    font-size: 1.2rem;
+    border-radius: 2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .3s linear;
+}
+
+.btn:hover{
+    color: var(--reverse-color);
+    background: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.container{
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.container h1{
+    margin-bottom: 1rem;
+}
+/* html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
+
+.create-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 400px;
+  }
+
+  .control-group{
+    width: 100%;
+  }
+
+  textarea{
+      height: 3rem;
+  }
+
+
+@media(max-width: 768px){
+    .container{
+        padding: 20px;
+    }
+
+    .container h1{
+        font-size: 1.7rem;
+    }
+}

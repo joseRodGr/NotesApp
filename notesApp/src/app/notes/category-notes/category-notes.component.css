@@ -1,0 +1,68 @@
+.title-options{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    /* border-bottom: 2px solid var(--primary-color);
+    margin-bottom: 1rem; */
+}
+
+.title-options h1 span{
+    color: var(--primary-color);
+}
+
+.title-options .note-options{
+    margin-bottom: 1rem;
+}
+
+.note-options button{
+    /* border: 1px solid var(--primary-dark); */
+    border: none;
+    padding: .3rem .5rem;
+    border-radius: .3rem;
+    margin: .3rem;
+    cursor: pointer;
+    font-size: 1rem;
+    background: none;
+    color: var(--primary-dark);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .25);
+
+}
+
+.note-options button:hover,
+.note-options button.selected
+{
+    background: var(--primary-color);
+    color: var(--reverse-color);
+}
+
+.note-options button i{
+    margin-right: .5rem;
+}
+
+
+.notes-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.note-add{
+    background: #eee;
+    padding: .5rem 1rem;
+    height: 175px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.note-add button{
+    border: none;
+    cursor: pointer;
+}
+
+.note-add i{
+    font-size: 2rem;
+    font-weight: bold;
+    /* color: var(--primary-dark); */
+}

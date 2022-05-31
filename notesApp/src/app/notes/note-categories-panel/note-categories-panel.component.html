@@ -1,0 +1,11 @@
+<div class="container">
+    <h1>Categories</h1>
+    <div class="categories-container" *ngIf="categories">
+        <div class="category-add">
+            <button (click)="openDialogCreateCategory()" matTooltip="Add new category"><i class="fa-solid fa-plus"></i></button>
+        </div>
+        <div class="category" *ngFor="let category of categories">
+            <app-note-category [category]="category" (onDelete)="deleteCategory($event)" (onEdit)="editCategory($event)"></app-note-category>
+        </div>
+    </div>
+</div>

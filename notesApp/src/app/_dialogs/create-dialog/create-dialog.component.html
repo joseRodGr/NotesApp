@@ -1,0 +1,31 @@
+<div class="create-container">
+    <h2>{{data.title}}</h2>
+    <mat-form-field appearance="fill" class="control-group">
+        <mat-label>Name</mat-label>
+        <input matInput [formControl]="nameControl" [(ngModel)]="data.category.name">
+        <mat-error *ngIf="name?.invalid && name?.touched">
+            <span>Name field is required</span>    
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="control-group">
+        <mat-label>Description</mat-label>
+        <textarea matInput [(ngModel)]="data.category.description"></textarea>
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="control-group">
+        <mat-label>Color</mat-label>
+        <input type="text" matInput readonly 
+            [(colorPicker)]="data.category.color" 
+            [style.background]="data.category.color" 
+            [value]="data.category.color"
+            [cpPresetColors]="['#B4FF9F','#F9FFA4','#FFD59E','#FFA1A1','#F9CEEE','#B7E5DD']" 
+            [cpOutputFormat]="'hex'"
+            [(ngModel)]="data.category.color"/>
+    </mat-form-field>
+    <div mat-dialog-actions class="control-group">
+        <button mat-raised-button [disabled]="name.invalid" [mat-dialog-close]="data.category">Save</button>
+        <button mat-raised-button mat-dialog-close>Cancel</button>
+    </div>
+</div>
+
+ 
+

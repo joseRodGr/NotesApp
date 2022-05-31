@@ -1,0 +1,20 @@
+<header>
+    <nav>
+        <a routerLink="/" #logo class="logo nav-link">Notes</a>
+        <button #menuBars class="menuBars" (click)="switchMenu()"><i class="fa-solid fa-bars"></i></button>
+        <ul #menu class="menu" [ngClass]="(showMenu ? 'showMenu' : '')">
+            <li class="navitem">
+                <a routerLink="/" class="nav-link">Home</a>
+            </li>
+            <li class="navitem">
+                <a routerLink="/note-categories" routerLinkActive="activate" class="nav-link">Categories</a>
+            </li>
+            <li class="navitem">
+                <a routerLink="/" class="nav-link">About</a>
+            </li>
+            <li class="navitem">
+                <a routerLink="/" class="nav-link">Contact</a>
+            </li>
+        </ul>
+    </nav>
+</header>

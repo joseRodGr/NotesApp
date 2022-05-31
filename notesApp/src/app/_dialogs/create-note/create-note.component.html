@@ -1,0 +1,22 @@
+<div class="create-container">
+    <h2>New Note</h2>
+    <mat-form-field appearance="fill" class="control-group">
+        <mat-label>Title</mat-label>
+        <input matInput [formControl]="title" [(ngModel)]="data.title">
+        <mat-error *ngIf="title?.invalid && title?.touched">
+            <span>Title is required</span>
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="control-group">
+        <mat-label>Body</mat-label>
+        <textarea matInput [formControl]="body" [(ngModel)]="data.noteBody"></textarea>
+        <mat-error *ngIf="body?.invalid && body?.touched">
+            <span>Body is required</span>
+        </mat-error>
+    </mat-form-field>
+    <div mat-dialog-actions class="control-group">
+        <button mat-raised-button [disabled]="!controlsValid()" [mat-dialog-close]="data">Save</button>
+        <button mat-raised-button [mat-dialog-close]>Cancel</button>
+    </div>
+
+</div>
