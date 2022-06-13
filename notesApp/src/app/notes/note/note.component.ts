@@ -14,6 +14,7 @@ export class NoteComponent implements OnInit {
 
   @Input() note!: Note;
   @Input() categories!: Category[];
+  @Input() noteColor!: string;
   showOptions = false;
   isSelected = false;
   @Output() onSelectedBox = new EventEmitter<boolean>();

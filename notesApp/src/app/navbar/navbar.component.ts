@@ -24,7 +24,7 @@ export class NavbarComponent implements AfterViewInit {
   setEvents(){
 
     window.addEventListener('scroll', () => {
-      this.menu.nativeElement.classList.remove('showMenu')
+      this.menu.nativeElement.classList.remove('showMenu');
     });
   
     this.logo.nativeElement.addEventListener('click', () => {

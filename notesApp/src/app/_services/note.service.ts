@@ -34,18 +34,18 @@ export class NoteService {
 
   seedNotes(){
     const notesSeeded : Note[] = [
-      {noteId: 1, title: 'Otorrinolaringologia de parangaricutirimicuaro', noteBody: 'body1', categoryId: 1, categoryName: 'Category A', categoryColor: '#F9FFA4'},
-      {noteId: 2, title: 'title2', noteBody: 'body2', categoryId: 1, categoryName: 'Category A', categoryColor: '#F9FFA4'},
-      {noteId: 3, title: 'title3', noteBody: 'body3', categoryId: 1, categoryName: 'Category A', categoryColor: '#F9FFA4'},
-      {noteId: 4, title: 'title4', noteBody: 'body4', categoryId: 1, categoryName: 'Category A', categoryColor: '#F9FFA4'},
-      {noteId: 5, title: 'title5', noteBody: 'body5', categoryId: 2, categoryName: 'Category B', categoryColor: '#FFD59E'},
-      {noteId: 6, title: 'title6', noteBody: 'body6', categoryId: 2, categoryName: 'Category B', categoryColor: '#FFD59E'},
-      {noteId: 7, title: 'title7', noteBody: 'body7', categoryId: 2, categoryName: 'Category B', categoryColor: '#FFD59E'},
-      {noteId: 8, title: 'title8', noteBody: 'body8', categoryId: 2, categoryName: 'Category B', categoryColor: '#FFD59E'},
-      {noteId: 9, title: 'title9', noteBody: 'body9', categoryId: 3, categoryName: 'Category C', categoryColor: '#B4FF9F'},
-      {noteId: 10, title: 'title10', noteBody: 'body10', categoryId: 3, categoryName: 'Category C', categoryColor: '#B4FF9F'},
-      {noteId: 11, title: 'title11', noteBody: 'body11', categoryId: 3, categoryName: 'Category C', categoryColor: '#B4FF9F'},
-      {noteId: 12, title: 'title12', noteBody: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam nihil impedit iusto dignissimos voluptate minus provident iste ab sapiente expedita.', categoryId: 3, categoryName: 'Category C', categoryColor: '#B4FF9F'}
+      {noteId: 1, title: 'Otorrinolaringologia de parangaricutirimicuaro', noteBody: 'body1', categoryId: 1},
+      {noteId: 2, title: 'title2', noteBody: 'body2', categoryId: 1},
+      {noteId: 3, title: 'title3', noteBody: 'body3', categoryId: 1},
+      {noteId: 4, title: 'title4', noteBody: 'body4', categoryId: 1},
+      {noteId: 5, title: 'title5', noteBody: 'body5', categoryId: 2},
+      {noteId: 6, title: 'title6', noteBody: 'body6', categoryId: 2},
+      {noteId: 7, title: 'title7', noteBody: 'body7', categoryId: 2},
+      {noteId: 8, title: 'title8', noteBody: 'body8', categoryId: 2},
+      {noteId: 9, title: 'title9', noteBody: 'body9', categoryId: 3},
+      {noteId: 10, title: 'title10', noteBody: 'body10', categoryId: 3},
+      {noteId: 11, title: 'title11', noteBody: 'body11', categoryId: 3},
+      {noteId: 12, title: 'title12', noteBody: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam nihil impedit iusto dignissimos voluptate minus provident iste ab sapiente expedita.', categoryId: 3}
     ];
 
     this.notes.push(...notesSeeded);
@@ -83,27 +83,9 @@ export class NoteService {
 
   moveNote(noteToMove: Note, newCategory: Category){
     const index = this.notes.indexOf(noteToMove);
-
     this.notes[index].categoryId = newCategory.categoryId;
-    this.notes[index].categoryName = newCategory.name;
-    this.notes[index].categoryColor = newCategory.color;
   }
 
-  deleteNotesByCategory(categoryId: number){
-    this.notes = this.notes.filter(n => n.categoryId !== categoryId);
-  }
-
-  editNotesByCategory(categoryEdited: Category){
-
-    const categoriesToEdit = this.notes
-      .filter(n => n.categoryId === categoryEdited.categoryId);
-
-    categoriesToEdit.forEach(c => {
-      c.categoryName = categoryEdited.name;
-      c.categoryColor = categoryEdited.color;
-    });
-
-  }
 
   editNote(noteId: number, noteDto: {title: string, body: string}){
     const noteToEdit = this.notes.find(n => n.noteId === noteId);

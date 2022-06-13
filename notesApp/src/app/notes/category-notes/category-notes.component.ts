@@ -42,9 +42,9 @@ export class CategoryNotesComponent implements OnInit {
       noteId: this.noteService.getNextIndex(),
       title: '',
       noteBody: '',
-      categoryId: routeId,
-      categoryName: (this.noteCategory ? this.noteCategory.name : ''),
-      categoryColor: (this.noteCategory ? this.noteCategory?.color : '') 
+      categoryId: routeId
+      // categoryName: (this.noteCategory ? this.noteCategory.name : ''),
+      // categoryColor: (this.noteCategory ? this.noteCategory?.color : '') 
     };
 
     const dialogRef = this.dialog.open(CreateNoteComponent, {

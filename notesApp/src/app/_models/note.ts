@@ -3,6 +3,4 @@ export interface Note{
     title: string;
     noteBody: string;
     categoryId: number;
-    categoryName: string;
-    categoryColor: string
 } 

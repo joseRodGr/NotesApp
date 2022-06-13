@@ -12,7 +12,7 @@
     </div>
 
     <div class="form-container" *ngIf="note">
-        <form [formGroup]="noteForm" [ngStyle]="{'background-color': note.categoryColor}" (ngSubmit)="submitForm()">
+        <form [formGroup]="noteForm" [ngStyle]="{'background-color':noteCategory.color}" (ngSubmit)="submitForm()">
             <div class="button-container">
                 <button type="button" class="btn-options" (click)="switchOptions()"><i class="fa-solid fa-ellipsis-vertical"></i></button>
             </div>

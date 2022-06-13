@@ -20,6 +20,7 @@
         <div class="note-container" *ngFor="let note of notes">
             <app-note 
                 [note]="note"
+                [noteColor]="noteCategory.color"
                 [categories]="categories"
                 (onSelectedBox)="verifySelectedBoxes($event)" 
                 (onDeletedBox)="deleteNote($event)"

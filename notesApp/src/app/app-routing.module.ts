@@ -10,7 +10,7 @@ const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'note-categories', component: NoteCategoriesPanelComponent},
   {path: 'note-categories/:id', component: CategoryNotesComponent},
-  {path: ':category/note/:id', component: NoteDetailsComponent, canDeactivate: [PreventUnsavedChangesGuard]}
+  {path: 'note/:id', component: NoteDetailsComponent, canDeactivate: [PreventUnsavedChangesGuard]}
 ];
 
 @NgModule({

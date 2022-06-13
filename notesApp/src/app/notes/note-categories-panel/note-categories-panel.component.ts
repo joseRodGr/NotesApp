@@ -51,7 +51,6 @@ export class NoteCategoriesPanelComponent implements OnInit {
   }
 
   deleteCategory(categoryId: number){
-    this.noteService.deleteNotesByCategory(categoryId);
     this.categoryService.deleteCategory(categoryId);
     this.loadCategories();
   }
@@ -62,7 +61,6 @@ export class NoteCategoriesPanelComponent implements OnInit {
   }
 
   editCategory(editedCategory: Category){
-    this.noteService.editNotesByCategory(editedCategory);
     this.categoryService.editCategory(editedCategory);
     this.loadCategories();
   }
